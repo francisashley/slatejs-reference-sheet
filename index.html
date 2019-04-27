@@ -75,11 +75,9 @@
   <table>
     <tr>
       <td><a href="http://">addMark</a></td>
-      <td><pre><code>
-addMark(mark: Mark) => Editor
+      <td><pre><code>addMark(mark: Mark) => Editor
 addMark(properties: Object) => Editor
-addMark(type: String) => Editor
-</code></pre></td>
+addMark(type: String) => Editor</code></pre></td>
     </tr>
     <tr>
       <td><a href="http://">delete</a></td>
@@ -87,11 +85,9 @@ addMark(type: String) => Editor
     </tr>
     <tr>
       <td><a href="http://">insertBlock</a></td>
-      <td><pre><code>
-insertBlock(block: Block) => Editor
+      <td><pre><code>insertBlock(block: Block) => Editor
 insertBlock(properties: Object) => Editor
-insertBlock(type: String) => Editor
-</code></pre></td>
+insertBlock(type: String) => Editor</code></pre></td>
     </tr>
     <tr>
       <td><a href="http://">deleteBackward</a></td>
@@ -713,7 +709,7 @@ wrapInlineAtRange(range: Range, type: String) => Editor</code></pre></td>
     </tr>
     <tr>
       <td><a href="http://">setMarkByKey</a></td>
-      <pre><code>setMarkByKey(key: String, offset: Number, length: Number, properties: Object, newProperties: Object) => Editor</code></pre>
+      <td><pre><code>setMarkByKey(key: String, offset: Number, length: Number, properties: Object, newProperties: Object) => Editor</code></pre></td>
     </tr>
     <tr>
       <td><a href="http://">setMarkByPath</a></td>
@@ -1861,35 +1857,27 @@ wrapInlineByPath(path: List, type: String) => Editor</code></pre></td>
 
     <tr>
       <td><a href="http://">moveAnchorTo</a></td>
-      <td><pre><code>
-moveAnchorTo(path: List, offset: Number) => Range
+      <td><pre><code>moveAnchorTo(path: List, offset: Number) => Range
 moveAnchorTo(key: String, offset: Number) => Range
-moveAnchorTo(offset: Number) => Range
-</code></pre></td>
+moveAnchorTo(offset: Number) => Range</code></pre></td>
     </tr>
     <tr>
       <td><a href="http://">moveFocusTo</a></td>
-      <td><pre><code>
-  moveFocusTo(path: List, offset: Number) => Range
+      <td><pre><code>moveFocusTo(path: List, offset: Number) => Range
   moveFocusTo(key: String, offset: Number) => Range
-  moveFocusTo(offset: Number) => Range
-</code></pre></td>
+  moveFocusTo(offset: Number) => Range</code></pre></td>
     </tr>
     <tr>
       <td><a href="http://">moveStartTo</a></td>
-      <td><pre><code>
-  moveStartTo(path: List, offset: Number) => Range
+      <td><pre><code>moveStartTo(path: List, offset: Number) => Range
   moveStartTo(key: String, offset: Number) => Range
-  moveStartTo(offset: Number) => Range
-</code></pre></td>
+  moveStartTo(offset: Number) => Range</code></pre></td>
     </tr>
     <tr>
       <td><a href="http://">moveEndTo</a></td>
-      <td><pre><code>
-  moveEndTo(path: List, offset: Number) => Range
+      <td><pre><code>moveEndTo(path: List, offset: Number) => Range
   moveEndTo(key: String, offset: Number) => Range
-  moveEndTo(offset: Number) => Range
-</code></pre></td>
+  moveEndTo(offset: Number) => Range</code></pre></td>
     </tr>
 
     <tr>
