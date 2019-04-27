@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Slate Reference Sheet</title>
+
+<link rel="stylesheet" href="./style.css">
+
+<div class="ref-container" style="padding: 20px 0 10px 0;">
+  <h3 style="margin-left:20px;border:none;padding:0;margin-bottom:0.5rem;">Index</h3>
+  <ul>
+    <li><a href="#block">Block</a></li>
+    <li><a href="#commands">Commands</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#decoration">Decoration</a></li>
+    <li><a href="#document">Document</a></li>
+    <li><a href="#editor">Editor</a></li>
+    <li><a href="#inline">Inline</a></li>
+    <li><a href="#mark">Mark</a></li>
+    <li><a href="#node">Node</a></li>
+    <li><a href="#operations">Operation</a></li>
+    <li><a href="#plugins">Plugins</a></li>
+    <li><a href="#point">Point</a></li>
+    <li><a href="#range">Range</a></li>
+    <li><a href="#schema">Schema</a></li>
+    <li><a href="#selection">Selection</a></li>
+    <li><a href="#text">Text</a></li>
+    <li><a href="#utils">Utils</a></li>
+    <li><a href="#value">Value</a></li>
+  </ul>
+</div>
+
+<div class="ref-container">
+<h3 id="block"><a href="#block">Block</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr><td><a href="http://">block.data</a></td><td><code>Data</code></td></tr>
+    <tr><td><a href="http://">block.key</a></td><td><code>String</code></td></tr>
+    <tr><td><a href="http://">block.nodes</a></td><td><code>Immutable.List &#x3c;Node></code></td></tr>
+    <tr><td><a href="http://">block.type</a></td><td><code>String</code></td></tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr><td><a href="http://">block.text</a></td><td><code>String</code></td></tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr><td><a href="http://">block.create</a></td><td><code>Block.create(properties: Object) => Block</code></td></tr>
+  </table>
+  <table>
+    <tr><td><a href="http://">block.createList</a></td><td><code>Block.createList(array: Array) => List</code></td></tr>
+  </table>
+  <table>
+    <tr><td><a href="http://">block.fromJSON</a></td><td><code>Block.fromJSON(object: Object) => Block</code></td></tr>
+  </table>
+  <table>
+    <tr><td><a href="http://">block.isBlock</a></td><td><code>Block.isBlock(maybeBlock: Any) => Boolean</code></td></tr>
+  </table>
+  <h4>Instance Methods</h4>
+  <table>
+    <tr><td><a href="http://">toJSON</a></td><td><code>toJSON() => Object</code></td></tr>
+  </table>
+  <h4>Implements interfaces</h4>
+  <table>
+    <tr><td><a href="http://">Node</a></td></tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="commands"><a href="#commands">Commands</a></h3>
+  <h4>Current Selection Commands</h4>
+  <p>These commands act on the <code>document</code> based on the current <code>selection</code>. They are equivalent to calling the <a href="https://docs.slatejs.org/slate-core/commands#document-range-commands">Document Range Commands</a> with the current selection as the <code>range</code> argument, but they are there for convenience, since you often want to act with the current selection, as a user would.</p>
+  <table>
+    <tr>
+      <td><a href="http://">addMark</a></td>
+      <td><pre><code>
+addMark(mark: Mark) => Editor
+addMark(properties: Object) => Editor
+addMark(type: String) => Editor
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">delete</a></td>
+      <td><code>delete() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertBlock</a></td>
+      <td><pre><code>
+insertBlock(block: Block) => Editor
+insertBlock(properties: Object) => Editor
+insertBlock(type: String) => Editor
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">deleteBackward</a></td>
+<td><code>deleteBackward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">deleteForward</a></td>
+<td><code>deleteForward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertFragment</a></td>
+<td><code>insertFragment(fragment: Document) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertInline</a></td>
+      <td><pre><code>insertInline(inline: Inline) => Editor
+insertInline(properties: Object) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertText</a></td>
+      <td><code>insertText(text: String) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setBlocks</a></td>
+      <td><pre><code>setBlocks(properties: Object) => Editor
+setBlocks(type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setInlines</a></td>
+      <td><pre><code>setInlines(properties: Object) => Editor
+setInlines(type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">splitBlock</a></td>
+      <td><code>splitBlock(depth: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">splitInline</a></td>
+      <td><code>splitInline(depth: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeMark</a></td>
+      <td><pre><code>removeMark(mark: Mark) => Editor
+removeMark(properties: Object) => Editor
+removeMark(type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">replaceMark</a></td>
+      <td><pre><code>replaceMark(oldMark: Mark, newMark: Mark) => Editor
+replaceMark(oldProperties: Object, newProperties: Object) => Editor
+replaceMark(oldType: String, newType: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">toggleMark</a></td>
+      <td><pre><code>toggleMark(mark: Mark) => Editor
+toggleMark(properties: Object) => Editor
+toggleMark(type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapBlock</a></td>
+      <td><pre><code>unwrapBlock(type: String) => Editor
+unwrapBlock(properties: Object) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapInline</a></td>
+      <td><pre><code>unwrapInline(type: String) => Editor
+unwrapInline(properties: Object) => Editor </code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapInline</a></td>
+      <td><pre><code>wrapInline(type: String) => Editor
+wrapInline(properties: Object) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapText</a></td>
+      <td><pre><code>wrapText(prefix: String, [suffix: String]) => Editor</code></pre></td>
+    </tr>
+  </table>
+  <h4>Current Selection Commands</h4>
+  <p>These commands change the current <code>selection</code>, without touching the <code>document</code>.</p>
+  <table>
+    <tr>
+      <td><a href="http://">blur</a></td>
+      <td><code>blur() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">deselect</a></td>
+      <td><code>deselect() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">flip</a></td>
+      <td><code>flip() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">focus</a></td>
+      <td><code>focus() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorBackward</a></td>
+      <td><code>moveAnchorBackward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusBackward</a></td>
+      <td><code>moveFocusBackward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartBackward</a></td>
+      <td><code>moveStartBackward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndBackward</a></td>
+      <td><code>moveEndBackward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorForward</a></td>
+      <td><code>moveAnchorForward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusForward</a></td>
+      <td><code>moveFocusForward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartForward</a></td>
+      <td><code>moveStartForward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndForward</a></td>
+      <td><code>moveEndForward(n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorTo</a></td>
+      <td><pre><code>moveAnchorTo(path: List, offset: Number) => Editor
+moveAnchorTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusTo</a></td>
+      <td><pre><code>moveAnchorTo(path: List, offset: Number) => Editor
+moveFocusTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartTo</a></td>
+      <td><pre><code>moveAnchorTo(path: List, offset: Number) => Editor
+moveStartTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndTo</a></td>
+      <td><pre><code>moveAnchorTo(path: List, offset: Number) => Editor
+moveEndTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToAnchor</a></td>
+      <td><code>moveToAnchor() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToFocus</a></td>
+      <td><code>moveToFocus() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToStart</a></td>
+      <td><code>moveToStart() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToEnd</a></td>
+      <td><code>moveToEnd() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOfBlock</a></td>
+      <td><code>moveAnchorToStartOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOfBlock</a></td>
+      <td><code>moveFocusToStartOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOfBlock</a></td>
+      <td><code>moveStartToStartOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOfBlock</a></td>
+      <td><code>moveEndToStartOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOfBlock</a></td>
+      <td><code>moveAnchorToEndOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOfBlock</a></td>
+      <td><code>moveFocusToEndOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOfBlock</a></td>
+      <td><code>moveStartToEndOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOfBlock</a></td>
+      <td><code>moveEndToEndOfBlock() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOfDocument</a></td>
+      <td><code>moveAnchorToStartOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOfDocument</a></td>
+      <td><code>moveFocusToStartOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOfDocument</a></td>
+      <td><code>moveStartToStartOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOfDocument</a></td>
+      <td><code>moveEndToStartOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOfDocument</a></td>
+      <td><code>moveAnchorToEndOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOfDocument</a></td>
+      <td><code>moveFocusToEndOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOfDocument</a></td>
+      <td><code>moveStartToEndOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOfDocument</a></td>
+      <td><code>moveEndToEndOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOfInline</a></td>
+      <td><code>moveAnchorToStartOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOfInline</a></td>
+      <td><code>moveFocusToStartOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOfInline</a></td>
+      <td><code>moveStartToStartOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOfInline</a></td>
+      <td><code>moveEndToStartOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOfInline</a></td>
+      <td><code>moveAnchorToEndOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOfInline</a></td>
+      <td><code>moveFocusToEndOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOfInline</a></td>
+      <td><code>moveStartToEndOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOfInline</a></td>
+      <td><code>moveEndToEndOfInline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOfNode</a></td>
+      <td><code>moveAnchorToStartOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOfNode</a></td>
+      <td><code>moveFocusToStartOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOfNode</a></td>
+      <td><code>moveStartToStartOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOfNode</a></td>
+      <td><code>moveEndToStartOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOfNode</a></td>
+      <td><code>moveAnchorToEndOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOfNode</a></td>
+      <td><code>moveFocusToEndOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOfNode</a></td>
+      <td><code>moveStartToEndOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOfNode</a></td>
+      <td><code>moveEndToEndOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOfText</a></td>
+      <td><code>moveAnchorToStartOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOfText</a></td>
+      <td><code>moveFocusToStartOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOfText</a></td>
+      <td><code>moveFocusToStartOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOfText</a></td>
+      <td><code>moveEndToStartOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOfText</a></td>
+      <td><code>moveAnchorToEndOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOfText</a></td>
+      <td><code>moveFocusToEndOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOfText</a></td>
+      <td><code>moveStartToEndOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOfText</a></td>
+      <td><code>moveEndToEndOfText(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOf{Direction???}Block</a></td>
+      <td><code>moveAnchorToStartOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOf{Direction???}Block</a></td>
+      <td><code>moveFocusToStartOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOf{Direction???}Block</a></td>
+      <td><code>moveStartToStartOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOf{Direction???}Block</a></td>
+      <td><code>moveEndToStartOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOf{Direction???}Block</a></td>
+      <td><code>moveAnchorToEndOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOf{Direction???}Block</a></td>
+      <td><code>moveFocusToEndOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOf{Direction???}Block</a></td>
+      <td><code>moveStartToEndOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOf{Direction???}Block</a></td>
+      <td><code>moveEndToEndOf{Direction???}Block() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOf{Direction???}Inline</a></td>
+      <td><code>moveAnchorToStartOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOf{Direction???}Inline</a></td>
+      <td><code>moveFocusToStartOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOf{Direction???}Inline</a></td>
+      <td><code>moveStartToStartOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOf{Direction???}Inline</a></td>
+      <td><code>moveEndToStartOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOf{Direction???}Inline</a></td>
+      <td><code>moveAnchorToEndOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOf{Direction???}Inline</a></td>
+      <td><code>moveFocusToEndOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOf{Direction???}Inline</a></td>
+      <td><code>moveStartToEndOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOf{Direction???}Inline</a></td>
+      <td><code>moveEndToEndOf{Direction???}Inline() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToStartOf{Direction???}Text</a></td>
+      <td><code>moveAnchorToStartOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOf{Direction???}Text</a></td>
+      <td><code>moveFocusToStartOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOf{Direction???}Text</a></td>
+      <td><code>moveStartToStartOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOf{Direction???}Text</a></td>
+      <td><code>moveEndToStartOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveAnchorToEndOf{Direction???}Text</a></td>
+      <td><code>moveAnchorToEndOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOf{Direction???}Text</a></td>
+      <td><code>moveFocusToEndOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOf{Direction???}Text</a></td>
+      <td><code>moveStartToEndOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOf{Direction???}Text</a></td>
+      <td><code>moveEndToEndOf{Direction???}Text() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToRangeOfNode</a></td>
+      <td><code>moveToRangeOfNode(node: Node) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToRangeOfDocument</a></td>
+      <td><code>moveToRangeOfDocument() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">select</a></td>
+      <td><code>select(properties: Range || Object) => Editor</code></td>
+    </tr>
+  </table>
+
+  <h4>Document Range Commands</h4>
+  <p>These commands act on a specific <code><a href="https://docs.slatejs.org/slate-core/range">Range</a></code> of the document.</p>
+  <table>
+    <tr>
+      <td><a href="http://">addMarkAtRange</a></td>
+      <td><pre><code>addMarkAtRange(range: Range, mark: Mark) => Editor
+addMarkAtRange(range: Range, properties: Object) => Editor
+addMarkAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">deleteAtRange</a></td>
+      <td><code>deleteAtRange(range: Range, ) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">deleteBackwardAtRange</a></td>
+      <td><code>deleteBackwardAtRange(range: Range, n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">deleteForwardAtRange</a></td>
+      <td><code>deleteForwardAtRange(range: Range, n: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertBlockAtRange</a></td>
+      <td><pre><code>insertBlockAtRange(range: Range, block: Block) => Editor
+insertBlockAtRange(range: Range, properties: Object) => Editor
+insertBlockAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertFragmentAtRange</a></td>
+      <td><code>insertFragmentAtRange(range: Range, fragment: Document) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertInlineAtRange</a></td>
+      <td><pre><code>insertInlineAtRange(range: Range, inline: Inline) => Editor
+insertInlineAtRange(range: Range, properties: Object) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertTextAtRange</a></td>
+      <td><pre><code>insertTextAtRange(range: Range, text: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setBlocksAtRange</a></td>
+      <td><pre><code>setBlocksAtRange(range: Range, properties: Object) => Editor
+setBlocks(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setInlinesAtRange</a></td>
+      <td><pre><code>setInlinesAtRange(range: Range, properties: Object) => Editor
+setInlines(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">splitBlockAtRange</a></td>
+      <td><code>splitBlockAtRange(range: Range, depth: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">splitInlineAtRange</a></td>
+      <td><code>splitInlineAtRange(range: Range, depth: Number) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeMarkAtRange</a></td>
+      <td><pre><code>removeMarkAtRange(range: Range, mark: Mark) => Editor
+removeMarkAtRange(range: Range, properties: Object) => Editor
+removeMarkAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">toggleMarkAtRange</a></td>
+      <td><pre><code>toggleMarkAtRange(range: Range, mark: Mark) => Editor
+toggleMarkAtRange(range: Range, properties: Object) => Editor
+toggleMarkAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapBlockAtRange</a></td>
+      <td><pre><code>unwrapBlockAtRange(range: Range, properties: Object) => Editor
+unwrapBlockAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapInlineAtRange</a></td>
+      <td><pre><code>unwrapInlineAtRange(range: Range, properties: Object) => Editor
+unwrapInlineAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapBlockAtRange</a></td>
+      <td><pre><code>wrapBlockAtRange(range: Range, properties: Object) => Editor
+wrapBlockAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapInlineAtRange</a></td>
+      <td><pre><code>wrapInlineAtRange(range: Range, properties: Object) => Editor
+wrapInlineAtRange(range: Range, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapTextAtRange</a></td>
+      <td><code>wrapTextAtRange(range: Range, prefix: String, [suffix: String]) => Editor</code></td>
+    </tr>
+  </table>
+
+  <h4>Node Commands</h4>
+  <p>These commands are lower-level, and act on a specific node by its <code>key</code> or <code>path</code>. They're often used in your custom components because you'll have access to <code>props.node</code>.</p>
+
+  <table>
+    <tr>
+      <td><a href="http://">addMarkByKey</a></td>
+      <td><pre><code>addMarkByKey(key: String, offset: Number, length: Number, mark: Mark) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">addMarkByPath</a></td>
+      <td><pre><code>addMarkByPath(path: List, offset: Number, length: Number, mark: Mark) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertNodeByKey</a></td>
+      <td><pre><code>insertNodeByKey(key: String, index: Number, node: Node) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertNodeByPath</a></td>
+      <td><pre><code>insertNodeByPath(path: List, index: Number, node: Node) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertFragmentByKey</a></td>
+      <td><pre><code>insertFragmentByKey(key: String, index: Number, fragment: Fragment) => Transform</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertFragmentByPath</a></td>
+      <td><pre><code>insertFragmentByPath(path: list, index: Number, fragment: Fragment) => Transform</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertTextByKey</a></td>
+      <td><pre><code>insertTextByKey(key: String, offset: Number, text: String, [marks: Set]) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">insertTextByPath</a></td>
+      <td><pre><code>insertTextByPath(path: List, offset: Number, text: String, [marks: Set]) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">mergeNodeByKey</a></td>
+      <td><pre><code>mergeNodeByKey(key: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">mergeNodeByPath</a></td>
+      <td><pre><code>mergeNodeByPath(path: List) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveNodeByKey</a></td>
+      <td><pre><code>moveNodeByKey(key: String, newKey: String, newIndex: Number) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveNodeByPath</a></td>
+      <td><pre><code>moveNodeByPath(path: List, newKey: String, newIndex: Number) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeMarkByKey</a></td>
+      <td><pre><code>removeMarkByKey(key: String, offset: Number, length: Number, mark: Mark) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeMarkByPath</a></td>
+      <td><pre><code>removeMarkByPath(path: List, offset: Number, length: Number, mark: Mark) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeNodeByKey</a></td>
+      <td><pre><code>removeNodeByKey(key: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeNodeByPath</a></td>
+      <td><pre><code>removeNodeByPath(path: List) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">replaceNodeByKey</a></td>
+      <td><pre><code>replaceNodeByKey(key: String, node: Node) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">replaceNodeByPath</a></td>
+      <td><pre><code>replaceNodeByPath(path: List, node: Node) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeTextByKey</a></td>
+      <td><pre><code>removeTextByKey(key: String, offset: Number, length: Number) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">removeTextByPath</a></td>
+      <td><pre><code>removeTextByPath(path: List, offset: Number, length: Number) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setMarkByKey</a></td>
+      <pre><code>setMarkByKey(key: String, offset: Number, length: Number, properties: Object, newProperties: Object) => Editor</code></pre>
+    </tr>
+    <tr>
+      <td><a href="http://">setMarkByPath</a></td>
+      <td><pre><code>setMarkByPath(path: List, offset: Number, length: Number, properties: Object, newProperties: Object) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setNodeByKey</a></td>
+      <td><pre><code>setNodeByKey(key: String, properties: Object) => Editor
+setNodeByKey(key: String, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setNodeByPath</a></td>
+      <td><pre><code>setNodeByPath(path: List, properties: Object) => Editor
+setNodeByPath(path: List, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">splitNodeByKey</a></td>
+      <td><pre><code>splitNodeByKey(key: String, offset: Number) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">splitNodeByPath</a></td>
+      <td><pre><code>splitNodeByPath(path: List, offset: Number) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapInlineByKey</a></td>
+      <td><pre><code>unwrapInlineByKey(key: String, properties: Object) => Editor
+unwrapInlineByKey(key: String, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapInlineByPath</a></td>
+      <td><pre><code>unwrapInlineByPath(path: List, properties: Object) => Editor
+unwrapInlineByPath(path: List, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapBlockByKey</a></td>
+      <td><pre><code>unwrapBlockByKey(key: String, properties: Object) => Editor
+unwrapBlockByKey(key: String, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapBlockByPath</a></td>
+      <td><pre><code>unwrapBlockByPath(path: List, properties: Object) => Editor
+unwrapBlockByPath(path: List, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapNodeByKey</a></td>
+      <td><code>unwrapNodeByKey(key: String) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unwrapNodeByPath</a></td>
+      <td><code>unwrapNodeByPath(path: List) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapBlockByKey</a></td>
+      <td><pre><code>wrapBlockByKey(key: String, properties: Object) => Editor
+wrapBlockByKey(key: String, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapBlockByPath</a></td>
+      <td><pre><code>wrapBlockByPath(path: List, properties: Object) => Editor
+wrapBlockByPath(path: List, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapInlineByKey</a></td>
+      <td><pre><code>wrapInlineByKey(key: String, properties: Object) => Editor
+wrapInlineByKey(key: String, type: String) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapInlineByPath</a></td>
+      <td><pre><code>wrapInlineByPath(path: List, properties: Object) => Editor
+wrapInlineByPath(path: List, type: String) => Editor</code></pre></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">wrapNodeByKey</a></td>
+      <td><pre><code>wraNodeByKey(key: String, parent: Node) => Editor</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">wrapNodeByPath</a></td>
+      <td><pre><code>wraNodeByPath(path: List, parent: Node) => Editor</code></pre></td>
+    </tr>
+  </table>
+
+  <h4>History Commands</h4>
+  <p>These commands use the history to undo/redo previously made changes.</p>
+
+  <table>
+    <tr>
+      <td><a href="http://">redo</a></td>
+      <td><code>redo() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">undo</a></td>
+      <td><code>undo() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">snapshotSelection</a></td>
+      <td><code>snapshotSelection() => Editor
+        </code></td>
+    </tr>
+  </table>
+
+
+  <h4>Miscellaneous Commands</h4>
+  <table>
+    <tr>
+      <td><a href="http://">normalize</a></td>
+      <td><code>normalize() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">withoutNormalizing</a></td>
+      <td><code>withoutNormalizing(fn: Function) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">withoutSaving</a></td>
+      <td><code>withoutSaving(fn: Function) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">withoutMerging</a></td>
+      <td><code>withoutMerging(fn: Function) => Editor</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="data"><a href="#data">Data</a></h3>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Data.create</a></td>
+      <td><code>Data.create(properties: Object) => Data</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Data.fromJSON</a></td>
+      <td><code>Data.fromJSON(object: Object) => Data</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="decoration"><a href="#decoration">Decoration</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">mark</a></td>
+      <td><code>Mark</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Decoration.create</a></td>
+      <td><code>Decoration.create(properties: Object) => Decoration</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Decoration.createProperties</a></td>
+      <td><code>Decoration.createProperties(object: Object|Decoration) => Object</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Decoration.fromJSON</a></td>
+      <td><code>Decoration.fromJSON(object: Object) => Decoration</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Decoration.isDecoration</a></td>
+      <td><code>Decoration.isDecoration(value: Any) => Boolean</code></td>
+    </tr>
+  </table>
+
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object</code></td>
+    </tr>
+  </table>
+
+  <h4>Mutating Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">setMark</a></td>
+      <td><code>setMark(mark: Mark) => Decoration</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="document"><a href="#document">Document</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">data</a></td>
+      <td><code>Immutable.Map</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">nodes</a></td>
+      <td><code>Immutable.List</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">text</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Document.create</a></td>
+      <td><code>Document.create(properties: Object) => Document</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Document.fromJSON</a></td>
+      <td><code>Document.fromJSON(object: Object) => Document</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Document.isDocument</a></td>
+      <td><code>Document.isDocument(maybeDocument: Any) => Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object</code></td>
+    </tr>
+  </table>
+  <h4>Implements interfaces</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Node</a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="editor"><a href="#editor">Editor</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">onChange</a></td>
+      <td><code>Function onChange(change: Change)</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">operations</a></td>
+      <td><code>List&lt;Operation></code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">plugins</a></td>
+      <td><code>Array</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">readOnly</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">value</a></td>
+      <td><code>Value</code></td>
+    </tr>
+  </table>
+  <h4>Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">command</a></td>
+      <td><code>command(type: String, ...args) => Editor command(fn: Function, ...args) => Editor</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">flush</a></td>
+      <td><code>flush() => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">hasCommand</a></td>
+      <td><code>hasCommand(type: String) => Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">hasQuery</a></td>
+      <td><code>hasQuery(type: String) => Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">query</a></td>
+      <td><code>query(type: String, ...args) => Any query(fn: Function, ...args) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">registerCommand</a></td>
+      <td><code>registerCommand(type: String) => Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">registerQuery</a></td>
+      <td><code>registerQuery(type: String) => Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">run</a></td>
+      <td><code>run(key, ...args) => Any</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">setReadOnly</a></td>
+      <td><code>setReadOnly(readOnly: Boolean) => Editor</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setValue</a></td>
+      <td><code>setValue(value: Value, options: Object) => Editor</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="inline"><a href="#inline">Inline</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">data</a></td>
+      <td><code>Immutable.Map</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">key</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">nodes</a></td>
+      <td><code>Immutable.List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">type</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">text</a></td>
+      <td><code>String</code></td>
+    </tr>
+    </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Inline.create</a></td>
+      <td><code>Inline.create(properties: Object) => Inline</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Inline.createList</a></td>
+      <td><code>Inline.createList(array: Array) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Inline.fromJSON</a></td>
+      <td><code>Inline.fromJSON(object: Object) => Inline</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Inline.isInline</a></td>
+      <td><code>Inline.isInline(maybeInline: Any) => Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Implements interfaces</h4>
+  <table>
+    <tr>
+      <td><a href="http://"></a></td>
+      <td><code>Node</code></td>
+    </tr>
+  </table>
+
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="mark"><a href="#mark">Mark</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">data</a></td>
+      <td><code>Data</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">type</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Mark.create</a></td>
+      <td><code>Mark.create(properties: Object) => Mark</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Mark.createSet</a></td>
+      <td><code>Mark.createSet(array: Array) => Set</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Mark.fromJSON</a></td>
+      <td><code>Mark.fromJSON(object: Object) => Mark</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Mark.isMark</a></td>
+      <td><code>Mark.isMark(maybeMark: Any) => Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Instance methods</h4>
+  <table>
+      <tr>
+        <td><a href="http://">toJSON</a></td>
+        <td><code>toJSON() => Object</code></td>
+      </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="node"><a href="#node">Node</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">key</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">nodes</a></td>
+      <td><code>Immutable.List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">text</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">filterDescendants</a></td>
+      <td><code>filterDescendants(iterator: Function) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">findDescendant</a></td>
+      <td><code>findDescendant(iterator: Function) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getAncestors</a></td>
+      <td><code>getAncestors(path: List|Array) => List|Void getAncestors(key: String) => List|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getBlocks</a></td>
+      <td><code>getBlocks() => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getLeafBlocksAtRange</a></td>
+      <td><code>getLeafBlocksAtRange(range: Range) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getBlocksByType</a></td>
+      <td><code>getBlocksByType(type: String) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getChild</a></td>
+      <td><code>getChild(path: List|Array) => Node|Void getChild(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getClosest</a></td>
+      <td><code>getClosest(path: List|Array, match: Function) => Node|Void getClosest(key: String, match: Function) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getClosestBlock</a></td>
+      <td><code>getClosestBlock(path: List|Array) => Node|Void getClosestBlock(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getClosestInline</a></td>
+      <td><code>getClosestInline(path: List|Array) => Node|Void getClosestInline(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getClosestVoid</a></td>
+      <td><code>getClosestVoid(path: List|Array) => Node|Void getClosestVoid(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getCommonAncestor</a></td>
+      <td><code>getCommonAncestor(path: List|Array) => Number getCommonAncestor(key: String) => Number</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getDepth</a></td>
+      <td><code>getDepth(path: List|Array) => Number getDepth(key: String) => Number</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getDescendant</a></td>
+      <td><code>getDescendant(path: List|Array) => Node|Void getDescendant(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getFirstText</a></td>
+      <td><code>getFirstText() => Text|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getFragmentAtRange</a></td>
+      <td><code>getFragmentAtRange(range: Range) => Document</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getFurthest</a></td>
+      <td><code>getFurthest(path: List|Array, iterator: Function) => Node|Null getFurthest(key: String, iterator: Function) => Node|Null</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getFurthestAncestor</a></td>
+      <td><code>getFurthestAncestor(path: List|Array) => Node|Null getFurthestAncestor(key: String) => Node|Null</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getFurthestBlock</a></td>
+      <td><code>getFurthestBlock(path: List|Array) => Node|Null getFurthestBlock(key: String) => Node|Null</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getFurthestInline</a></td>
+      <td><code>getFurthestInline(path: List|Array) => Node|Null getFurthestInline(key: String) => Node|Null</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getFurthestOnlyChildAncestor</a></td>
+      <td><code>getFurthestOnlyChildAncestor(path: List|Array) => Node|Null getFurthestOnlyChildAncestor(key: String) => Node|Null</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getInlines</a></td>
+      <td><code>getInlines() => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getLeafInlinesAtRange</a></td>
+      <td><code>getLeafInlinesAtRange(range: Range) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getInlinesByType</a></td>
+      <td><code>getInlinesByType(type: string) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getLastText</a></td>
+      <td><code>getLastText() => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getMarks</a></td>
+      <td><code>getMarks(range: Range) => Set</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getMarksAtRange</a></td>
+      <td><code>getMarksAtRange(range: Range) => Set</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getMarksByType</a></td>
+      <td><code>getMarksByType(type: String) => Set</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getNextBlock</a></td>
+      <td><code>getNextBlock(path: List|Array) => Node|Void getNextBlock(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getNextNode</a></td>
+      <td><code>getNextNode(path: List|Array) => Node|Void getNextNode(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getNextSibling</a></td>
+      <td><code>getNextSibling(path: List|Array) => Node|Void getNextSibling(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getNextText</a></td>
+      <td><code>getNextText(path: List|Array) => Node|Void getNextText(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getNode</a></td>
+      <td><code>getNode(path: List|Array) => Node|Void getNode(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getNodesAtRange</a></td>
+      <td><code>getNodesAtRange(range: Range) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getOffset</a></td>
+      <td><code>getOffset(path: List|Array) => Number getOffset(key: String) => Number</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getParent</a></td>
+      <td><code>getParent(path: List|Array) => Node|Void getParent(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getPath</a></td>
+      <td><code>getPath(path: List|Array) => Node|Void getPath(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getPreviousBlock</a></td>
+      <td><code>getPreviousBlock(path: List|Array) => Node|Void getPreviousBlock(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getPreviousNode</a></td>
+      <td><code>getPreviousNode(path: List|Array) => Node|Void getPreviousNode(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getPreviousSibling</a></td>
+      <td><code>getPreviousSibling(path: List|Array) => Node|Void getPreviousSibling(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getPreviousText</a></td>
+      <td><code>getPreviousText(path: List|Array) => Node|Void getPreviousText(key: String) => Node|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getRootBlocksAtRange</a></td>
+      <td><code>getRootBlocksAtRange(range: Range) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getRootInlinesAtRange</a></td>
+      <td><code>getRootInlinesAtRange(range: Range) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getTextAtOffset</a></td>
+      <td><code>getTextAtOffset(offset: Number) => Text || Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getTextDirection</a></td>
+      <td><code>getTextDirection() => String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getTexts</a></td>
+      <td><code>getTexts(range: Range) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">getTextsAtRange</a></td>
+      <td><code>getTextsAtRange(range: Range) => List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">hasChild</a></td>
+      <td><code>hasChild(path: List|Array) => Boolean hasChild(key: String) => Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">hasDescendant</a></td>
+      <td><code>hasDescendant(path: List|Array) => Boolean hasDescendant(key: String) => Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">hasNode</a></td>
+      <td><code>hasNode(path: List|Array) => Boolean hasNode(key: String) => Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isNodeInRange</a></td>
+      <td><code>isNodeInRange(path: List|Array, range: Range) => Boolean isNodeInRange(key: String, range: Range) => Boolean</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="operation"><a href="#operation">Operation</a></h3>
+  <h4>Text Operations</h4>
+  <table>
+    <tr>
+      <td><a href="http://">insert_text</a></td>
+      <td><pre><code>{
+  type: 'insert_text',
+  path: List,
+  offset: Number,
+  text: String,
+  marks: List,
+  data: Map,
+}</code></pre></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">remove_text</a></td>
+      <td><pre><code>{
+  type: 'remove_text',
+  path: List,
+  offset: Number,
+  text: String,
+  data: Map,
+}</code></pre></td>
+    </tr>
+  </table>
+
+  <h4>Mark Operations</h4>
+  <table>
+    <tr>
+      <td><a href="http://">add_mark</a></td>
+      <td><pre><code>{
+  type: 'add_mark',
+  path: List,
+  offset: Number,
+  length: Number,
+  mark: Mark,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">remove_mark</a></td>
+      <td><pre><code>{
+  type: 'remove_mark',
+  path: List,
+  offset: Number,
+  length: Number,
+  mark: Mark,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">set_mark</a></td>
+      <td><pre><code>{
+  type: 'set_mark',
+  path: List,
+  offset: Number,
+  length: Number,
+  properties: Object,
+  newProperties: Object,
+  data: Map,
+}</code></pre></td>
+    </tr>
+  </table>
+
+  <h4>Node Operations</h4>
+  <table>
+    <tr>
+      <td><a href="http://">insert_node</a></td>
+      <td><pre><code>{
+  type: 'insert_node',
+  path: List,
+  node: Node,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">merge_node</a></td>
+      <td><pre><code>{
+  type: 'merge_node',
+  path: List,
+  position: Number,
+  properties: Object,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">move_node</a></td>
+      <td><pre><code>{
+  type: 'move_node',
+  path: List,
+  newPath: Array,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">remove_node</a></td>
+      <td><pre><code>{
+  type: 'remove_node',
+  path: List,
+  node: Node,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">set_node</a></td>
+      <td><pre><code>{
+  type: 'set_node',
+  path: List,
+  properties: Object,
+  newProperties: Object,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">split_node</a></td>
+      <td><pre><code>{
+  type: 'split_node',
+  path: List,
+  position: Number,
+  target: Number,
+  properties: Object,
+  data: Map,
+}</code></pre></td>
+    </tr>
+  </table>
+  <h4>Value Operations</h4>
+  <table>
+    <tr>
+      <td><a href="http://">set_selection</a></td>
+      <td><pre><code>{
+  type: 'set_selection',
+  properties: Object,
+  newProperties: Object,
+  data: Map,
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">set_value</a></td>
+      <td><pre><code>{
+  type: 'set_value',
+  properties: Object,
+  newProperties: Object,
+  data: Map,
+}</code></pre></td>
+    </tr>
+  </table>
+  <h4>Helpers</h4>
+  <table>
+    <tr>
+      <td><a href="http://">apply</a></td>
+      <td><pre><code>apply(value: Value, operation: Object) => Value</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">invert</a></td>
+      <td><pre><code>invert(operation: Object) => Object</code></pre></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="plugins"><a href="#plugins">Plugins</a></h3>
+  <h4>Hooks</h4>
+  <table>
+    <tr>
+      <td><a href="http://">normalizeNode</a></td>
+      <td><code>Function normalizeNode(node: Node, editor: Editor, next: Function) => Function(editor: Editor)|Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">onChange</a></td>
+      <td><code>onChange(editor: Editor, next: Function) => Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">onCommand</a></td>
+      <td><code>onCommand(command: Object, editor: Editor, next: Function) => Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">onConstruct</a></td>
+      <td><code>onConstruct(editor: Editor, next: Function) => Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">onQuery</a></td>
+      <td><code>onQuery(query: Object, editor: Editor, next: Function) => Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">validateNode</a></td>
+      <td><code>Function validateNode(node: Node, editor: Editor, next: Function) => SlateError|Void</code></td>
+    </tr>
+  </table>
+  <h4>Shorthands</h4>
+  <table>
+    <tr>
+      <td><a href="http://">commands</a></td>
+      <td><code>commands: Object</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">queries</a></td>
+      <td><code>queries: Object</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">schema</a></td>
+      <td><code>schema: Object</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="point"><a href="#point">Point</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">key</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">path</a></td>
+      <td><code>List</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">offset</a></td>
+      <td><code>Number</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">isSet</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isUnset</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Point.create</a></td>
+      <td><code>Point.create(properties: Object|Point) => Point</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Point.createProperties</a></td>
+      <td><code>Point.createProperties(object: Object|Point) => Object</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Point.fromJSON</a></td>
+      <td><code>Point.fromJSON(object: Object) => Point</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Point.isPoint</a></td>
+      <td><code>Point.isPoint(value: Any) => Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object</code></td>
+    </tr>
+  </table>
+  <h4>Checking Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">isAfterRange</a></td>
+      <td><code>isAfterRange(range: Range) => Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isAtEndOfRange</a></td>
+      <td><code>isAtEndOfRange(range: Range) => Boolean
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isAtStartOfRange</a></td>
+      <td><code>isAtStartOfRange(range: Range) => Boolean
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isBeforeRange</a></td>
+      <td><code>isBeforeRange(range: Range) => Boolean
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isInRange</a></td>
+      <td><code>isInRange(range: Range) => Boolean
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isAtEndOfNode</a></td>
+      <td><code>isAtEndOfNode(node: Node) => Boolean
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isAtStartOfNode</a></td>
+      <td><code>isAtStartOfNode(node: Node) => Boolean
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isInNode</a></td>
+      <td><code>isInNode(node: Node) => Boolean
+        </code></td>
+    </tr>
+  </table>
+  <h4>Mutating Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">moveBackward</a></td>
+      <td><code>moveBackward(n: Number) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveForward</a></td>
+      <td><code>moveForward(n: Number) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveTo</a></td>
+      <td><code>moveTo(path: List, offset: Number) => Point moveTo(key: String, offset: Number) => Point moveTo(offset: Number) => Point</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToEndOfNode</a></td>
+      <td><code>moveToEndOfNode(node: Node) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToStartOfNode</a></td>
+      <td><code>moveToStartOfNode(node: Node) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">normalize</a></td>
+      <td><code>normalize(node: Node) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setKey</a></td>
+      <td><code>setKey(key: String|Null) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setOffset</a></td>
+      <td><code>setOffset(offset: Number|Null) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setPath</a></td>
+      <td><code>setPath(path: List|Array|Null) => Point
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unset</a></td>
+      <td><code>unset() => Point
+        </code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="range"><a href="#range">Range</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">anchor</a></td>
+      <td><code>Point</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">focus</a></td>
+      <td><code>Point</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">end</a></td>
+      <td><code>Anchor|Focus</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isBackward</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isCollapsed</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isExpanded</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isForward</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isSet</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">isUnset</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">start</a></td>
+      <td><code>Acnhor|Focus</code></td>
+    </tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Range.create
+      </a></td>
+      <td><code>Range.create(properties: Object) => Range
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Range.createProperties
+      </a></td>
+      <td><code>Range.createProperties(object: Object|Range) => Object
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Range.fromJSON
+      </a></td>
+      <td><code>Range.fromJSON(object: Object) => Range
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Range.isRange
+      </a></td>
+      <td><code>Range.isRange(value: Any) => Boolean
+        </code></td>
+    </tr>
+  </table>
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object
+        </code></td>
+    </tr>
+  </table>
+
+  <h4>Mutating Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">moveAnchorBackward</a></td>
+      <td><code>moveAnchorBackward(n: Number) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusBackward</a></td>
+      <td><code>moveFocusBackward(n: Number) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartBackward</a></td>
+      <td><code>moveStartBackward(n: Number) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndBackward</a></td>
+      <td><code>moveEndBackward(n: Number) => Range</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">moveAnchorForward</a></td>
+      <td><code>moveAnchorBackward(n: Number) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusForward</a></td>
+      <td><code>moveFocusBackward(n: Number) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartForward</a></td>
+      <td><code>moveStartBackward(n: Number) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndForward</a></td>
+      <td><code>moveEndBackward(n: Number) => Range</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">moveAnchorTo</a></td>
+      <td><pre><code>
+moveAnchorTo(path: List, offset: Number) => Range
+moveAnchorTo(key: String, offset: Number) => Range
+moveAnchorTo(offset: Number) => Range
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusTo</a></td>
+      <td><pre><code>
+  moveFocusTo(path: List, offset: Number) => Range
+  moveFocusTo(key: String, offset: Number) => Range
+  moveFocusTo(offset: Number) => Range
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartTo</a></td>
+      <td><pre><code>
+  moveStartTo(path: List, offset: Number) => Range
+  moveStartTo(key: String, offset: Number) => Range
+  moveStartTo(offset: Number) => Range
+</code></pre></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndTo</a></td>
+      <td><pre><code>
+  moveEndTo(path: List, offset: Number) => Range
+  moveEndTo(key: String, offset: Number) => Range
+  moveEndTo(offset: Number) => Range
+</code></pre></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">moveAnchorToEndOfNode</a></td>
+      <td><code>moveAnchorToEndOfNode(node: Node) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToEndOfNode</a></td>
+      <td><code>moveFocusToEndOfNode(node: Node) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToEndOfNode</a></td>
+      <td><code>moveStartToEndOfNode(node: Node) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToEndOfNode</a></td>
+      <td><code>moveEndToEndOfNode(node: Node) => Range</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">moveAnchorToStartOfNode</a></td>
+      <td><code>moveAnchorToStartOfNode(node: Node) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveFocusToStartOfNode</a></td>
+      <td><code>moveFocusToStartOfNode(node: Node) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveStartToStartOfNode</a></td>
+      <td><code>moveStartToStartOfNode(node: Node) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveEndToStartOfNode</a></td>
+      <td><code>moveEndToStartOfNode(node: Node) => Range</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">moveToAnchor</a></td>
+      <td><code>moveToAnchor() => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToFocus</a></td>
+      <td><code>moveToFocus() => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToStart</a></td>
+      <td><code>moveToStart() => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">moveToEnd</a></td>
+      <td><code>moveToEnd() => Range</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">moveToRangeOfNode</a></td>
+      <td><code>moveToRangeOfNode(node: Node) => Range</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">normalize</a></td>
+      <td><code>normalize(node: Node) => Range</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">setAnchor</a></td>
+      <td><code>setAnchor(anchor: Point) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setEnd</a></td>
+      <td><code>setEnd(end: Point) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setFocus</a></td>
+      <td><code>setFocus(focus: Point) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setProperties</a></td>
+      <td><code>setProperties(properties: Object|Range) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setStart</a></td>
+      <td><code>setStart(start: Point) => Range</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">unset</a></td>
+      <td><code>unset() => Range</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="Selection"><a href="#Selection">Selection</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">isFocused</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">marks</a></td>
+      <td><code>Set</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">isBlurred</a></td>
+      <td><code>Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Selection.create</a></td>
+      <td><code>Selection.create(properties: Object) => Selection</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Selection.createProperties</a></td>
+      <td><code>Selection.createProperties(object: Object|Selection) => Object</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Selection.fromJSON</a></td>
+      <td><code>Selection.fromJSON(object: Object) => Selection</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Selection.isSelection</a></td>
+      <td><code>Selection.isSelection(value: Any) => Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object</code></td>
+    </tr>
+  </table>
+  <h4>Mutating Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">setIsFocused</a></td>
+      <td><code>setIsFocused(isFocused: Boolean) => Selection</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">setMarks</a></td>
+      <td><code>setMarks(marks: Set|Null) => Selection</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="text"><a href="#text">Text</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">key</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">text</a></td>
+      <td><code>String</code></td>
+    </tr>
+  </table>
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Text.create</a></td>
+      <td><code>Text.create(properties: Object) => Text</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Text.fromJSON</a></td>
+      <td><code>Text.fromJSON(object: Object) => Text</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Text.isText</a></td>
+      <td><code>Text.isText(maybeText: Any) => Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="utils"><a href="#utils">Utils</a></h3>
+  <h4>Key Utils</h4>
+  <table>
+    <tr>
+      <td><a href="http://">KeyUtils.create</a></td>
+      <td><code>create() => String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">KeyUtils.resetGenerator</a></td>
+      <td><code>resetGenerator() => Void</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">KeyUtils.setGenerator</a></td>
+      <td><code>setGenerator(generator: Function) => Void</code></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ref-container">
+  <h3 id="value"><a href="#value">Value</a></h3>
+  <h4>Properties</h4>
+  <table>
+    <tr>
+      <td><a href="http://">data</a></td>
+      <td><code>Data</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">decorations</a></td>
+      <td><code>List<Decoration>
+        </code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">document</a></td>
+      <td><code>Document</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">object</a></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">selection</a></td>
+      <td><code>Selection</code></td>
+    </tr>
+  </table>
+  <h4>Computed Properties</h4>
+  <table>
+
+    <tr>
+      <td><a href="http://">AnchorText</a></td>
+      <td><code>Text</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">FocusText</a></td>
+      <td><code>Text</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">StartText</a></td>
+      <td><code>Text</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">EndText</a></td>
+      <td><code>Text</code></td>
+    </tr>
+
+    <tr>
+      <td><a href="http://">AnchorBlock</a></td>
+      <td><code>Block</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">FocusBlock</a></td>
+      <td><code>Block</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">StartBlock</a></td>
+      <td><code>Block</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">EndBlock</a></td>
+      <td><code>Block</code></td>
+    </tr>
+
+  <tr>
+    <td><a href="http://">marks</a></td>
+    <td><code>Set</code></td>
+  </tr>
+
+  <tr>
+    <td><a href="http://">activeMarks</a></td>
+    <td><code>Set</code></td>
+  </tr>
+
+  <tr>
+    <td><a href="http://">blocks</a></td>
+    <td><code>List</code></td>
+  </tr>
+
+  <tr>
+    <td><a href="http://">fragment</a></td>
+    <td><code>Document</code></td>
+  </tr>
+
+  <tr>
+    <td><a href="http://">inlines</a></td>
+    <td><code>List</code></td>
+  </tr>
+  <tr>
+    <td><a href="http://">texts</a></td>
+    <td><code>List</code></td>
+  </tr>
+
+  <h4>Static Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">Value.create</a></td>
+      <td><code>Value.create(properties: Object) => Value</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Value.fromJSON</a></td>
+      <td><code>Value.fromJSON(object: Object) => Value</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://">Value.isValue</a></td>
+      <td><code>Value.isValue(any: Any) => Boolean</code></td>
+    </tr>
+  </table>
+  <h4>Instance Methods</h4>
+  <table>
+    <tr>
+      <td><a href="http://">toJSON</a></td>
+      <td><code>toJSON() => Object</code></td>
+    </tr>
+  </table>
+</div>
