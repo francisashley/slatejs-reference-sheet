@@ -334,6 +334,11 @@ code {
     border-radius: 3px;
     white-space: nowrap;
 }
+
+pre {
+    margin: 0;
+}
+
 pre code {
     white-space: unset;
 }
