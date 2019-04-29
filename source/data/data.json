@@ -1,0 +1,36 @@
+[
+    {
+      "type": "h3",
+      "id": "data",
+      "text": "Data"
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Data.create"
+          },
+          {
+            "type": "code",
+            "text": "Data.create(properties: Object) => Data"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Data.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Data.fromJSON(object: Object) => Data"
+          }
+        ]
+      ]
+    }
+  ]

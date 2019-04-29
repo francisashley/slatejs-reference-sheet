@@ -1,0 +1,46 @@
+[
+    {
+      "type": "h3",
+      "id": "utils",
+      "text": "Utils"
+    },
+    {
+      "type": "h4",
+      "text": "Key Utils"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "KeyUtils.create"
+          },
+          {
+            "type": "code",
+            "text": "create() => String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "KeyUtils.resetGenerator"
+          },
+          {
+            "type": "code",
+            "text": "resetGenerator() => Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "KeyUtils.setGenerator"
+          },
+          {
+            "type": "code",
+            "text": "setGenerator(generator: Function) => Void"
+          }
+        ]
+      ]
+    }
+  ]

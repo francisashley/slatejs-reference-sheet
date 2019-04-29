@@ -1,0 +1,273 @@
+[
+    {
+      "type": "h3",
+      "id": "value",
+      "text": "Value"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "data"
+          },
+          {
+            "type": "code",
+            "text": "Data"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "decorations"
+          },
+          {
+            "type": "code",
+            "text": "List"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "document"
+          },
+          {
+            "type": "code",
+            "text": "Document"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "selection"
+          },
+          {
+            "type": "code",
+            "text": "Selection"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Computed Properties"
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "AnchorText"
+          },
+          {
+            "type": "code",
+            "text": "Text"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "FocusText"
+          },
+          {
+            "type": "code",
+            "text": "Text"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "StartText"
+          },
+          {
+            "type": "code",
+            "text": "Text"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "EndText"
+          },
+          {
+            "type": "code",
+            "text": "Text"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "AnchorBlock"
+          },
+          {
+            "type": "code",
+            "text": "Block"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "FocusBlock"
+          },
+          {
+            "type": "code",
+            "text": "Block"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "StartBlock"
+          },
+          {
+            "type": "code",
+            "text": "Block"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "EndBlock"
+          },
+          {
+            "type": "code",
+            "text": "Block"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "marks"
+          },
+          {
+            "type": "code",
+            "text": "Set"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "activeMarks"
+          },
+          {
+            "type": "code",
+            "text": "Set"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "blocks"
+          },
+          {
+            "type": "code",
+            "text": "List"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "fragment"
+          },
+          {
+            "type": "code",
+            "text": "Document"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "inlines"
+          },
+          {
+            "type": "code",
+            "text": "List"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "texts"
+          },
+          {
+            "type": "code",
+            "text": "List"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Value.create"
+          },
+          {
+            "type": "code",
+            "text": "Value.create(properties: Object) => Value"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Value.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Value.fromJSON(object: Object) => Value"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Value.isValue"
+          },
+          {
+            "type": "code",
+            "text": "Value.isValue(any: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    }
+  ]

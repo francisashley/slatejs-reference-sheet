@@ -1,0 +1,202 @@
+[
+    {
+      "type": "h3",
+      "id": "operation",
+      "text": "Operation"
+    },
+    {
+      "type": "h4",
+      "text": "Text Operations"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "insert_text"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'insert_text',\n  path: List,\n  offset: Number,\n  text: String,\n  marks: List,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "remove_text"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'remove_text',\n  path: List,\n  offset: Number,\n  text: String,\n  data: Map,\n}"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Mark Operations"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "add_mark"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'add_mark',\n  path: List,\n  offset: Number,\n  length: Number,\n  mark: Mark,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "remove_mark"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'remove_mark',\n  path: List,\n  offset: Number,\n  length: Number,\n  mark: Mark,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "set_mark"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'set_mark',\n  path: List,\n  offset: Number,\n  length: Number,\n  properties: Object,\n  newProperties: Object,\n  data: Map,\n}"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Node Operations"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "insert_node"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'insert_node',\n  path: List,\n  node: Node,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "merge_node"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'merge_node',\n  path: List,\n  position: Number,\n  properties: Object,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "move_node"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'move_node',\n  path: List,\n  newPath: Array,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "remove_node"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'remove_node',\n  path: List,\n  node: Node,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "set_node"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'set_node',\n  path: List,\n  properties: Object,\n  newProperties: Object,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "split_node"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'split_node',\n  path: List,\n  position: Number,\n  target: Number,\n  properties: Object,\n  data: Map,\n}"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Value Operations"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "set_selection"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'set_selection',\n  properties: Object,\n  newProperties: Object,\n  data: Map,\n}"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "set_value"
+          },
+          {
+            "type": "code",
+            "text": "{\n  type: 'set_value',\n  properties: Object,\n  newProperties: Object,\n  data: Map,\n}"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Helpers"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "apply"
+          },
+          {
+            "type": "code",
+            "text": "apply(value: Value, operation: Object) => Value"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "invert"
+          },
+          {
+            "type": "code",
+            "text": "invert(operation: Object) => Object"
+          }
+        ]
+      ]
+    }
+  ]

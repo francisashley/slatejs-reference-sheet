@@ -1,0 +1,114 @@
+[
+    {
+      "type": "h3",
+      "id": "mark",
+      "text": "Mark"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "data"
+          },
+          {
+            "type": "code",
+            "text": "Data"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "type"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Mark.create"
+          },
+          {
+            "type": "code",
+            "text": "Mark.create(properties: Object) => Mark"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Mark.createSet"
+          },
+          {
+            "type": "code",
+            "text": "Mark.createSet(array: Array) => Set"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Mark.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Mark.fromJSON(object: Object) => Mark"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Mark.isMark"
+          },
+          {
+            "type": "code",
+            "text": "Mark.isMark(maybeMark: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    }
+  ]

@@ -1,0 +1,175 @@
+[
+    {
+      "type": "h3",
+      "id": "editor",
+      "text": "Editor"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "onChange"
+          },
+          {
+            "type": "code",
+            "text": "Function onChange(change: Change)"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "operations"
+          },
+          {
+            "type": "code",
+            "text": "List&lt;Operation&gt;"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "plugins"
+          },
+          {
+            "type": "code",
+            "text": "Array"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "readOnly"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "value"
+          },
+          {
+            "type": "code",
+            "text": "Value"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "command"
+          },
+          {
+            "type": "code",
+            "text": "command(type: String, ...args) => Editor command(fn: Function, ...args) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "flush"
+          },
+          {
+            "type": "code",
+            "text": "flush() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "hasCommand"
+          },
+          {
+            "type": "code",
+            "text": "hasCommand(type: String) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "hasQuery"
+          },
+          {
+            "type": "code",
+            "text": "hasQuery(type: String) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "query"
+          },
+          {
+            "type": "code",
+            "text": "query(type: String, ...args) => Any query(fn: Function, ...args) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "registerCommand"
+          },
+          {
+            "type": "code",
+            "text": "registerCommand(type: String) => Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "registerQuery"
+          },
+          {
+            "type": "code",
+            "text": "registerQuery(type: String) => Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "run"
+          },
+          {
+            "type": "code",
+            "text": "run(key, ...args) => Any"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setReadOnly"
+          },
+          {
+            "type": "code",
+            "text": "setReadOnly(readOnly: Boolean) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setValue"
+          },
+          {
+            "type": "code",
+            "text": "setValue(value: Value, options: Object) => Editor"
+          }
+        ]
+      ]
+    }
+  ]

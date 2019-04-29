@@ -1,0 +1,18 @@
+<?php
+
+if (!isset($argv[1]) || !isset($argv[2])) {
+    die('Failed to build. The script requires a source and destination path.');
+}
+
+$cwd = getcwd() . '/';
+$source = $cwd . $argv[1];
+$destination =  $cwd . $argv[2];
+
+ob_start();
+require_once($source);
+$content = ob_get_contents();
+ob_end_clean();
+
+$file = fopen($destination, "w");
+fwrite($file, $content);
+fclose($file);

@@ -1,0 +1,172 @@
+[
+    {
+      "type": "h3",
+      "id": "inline",
+      "text": "Inline"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "data"
+          },
+          {
+            "type": "code",
+            "text": "Immutable.Map"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "key"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "nodes"
+          },
+          {
+            "type": "code",
+            "text": "Immutable.List"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "type"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Computed Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "text"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Inline.create"
+          },
+          {
+            "type": "code",
+            "text": "Inline.create(properties: Object) => Inline"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Inline.createList"
+          },
+          {
+            "type": "code",
+            "text": "Inline.createList(array: Array) => List"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Inline.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Inline.fromJSON(object: Object) => Inline"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Inline.isInline"
+          },
+          {
+            "type": "code",
+            "text": "Inline.isInline(maybeInline: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Implements interfaces"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": ""
+          },
+          {
+            "type": "code",
+            "text": "Node"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    }
+  ]
