@@ -1,0 +1,351 @@
+[
+    {
+      "type": "h3",
+      "id": "point",
+      "text": "Point"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "key"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "path"
+          },
+          {
+            "type": "code",
+            "text": "List"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "offset"
+          },
+          {
+            "type": "code",
+            "text": "Number"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Computed Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "isSet"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isUnset"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Point.create"
+          },
+          {
+            "type": "code",
+            "text": "Point.create(properties: Object|Point) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Point.createProperties"
+          },
+          {
+            "type": "code",
+            "text": "Point.createProperties(object: Object|Point) => Object"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Point.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Point.fromJSON(object: Object) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Point.isPoint"
+          },
+          {
+            "type": "code",
+            "text": "Point.isPoint(value: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Checking Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "isAfterRange"
+          },
+          {
+            "type": "code",
+            "text": "isAfterRange(range: Range) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isAtEndOfRange"
+          },
+          {
+            "type": "code",
+            "text": "isAtEndOfRange(range: Range) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isAtStartOfRange"
+          },
+          {
+            "type": "code",
+            "text": "isAtStartOfRange(range: Range) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isBeforeRange"
+          },
+          {
+            "type": "code",
+            "text": "isBeforeRange(range: Range) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isInRange"
+          },
+          {
+            "type": "code",
+            "text": "isInRange(range: Range) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isAtEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "isAtEndOfNode(node: Node) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isAtStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "isAtStartOfNode(node: Node) => Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isInNode"
+          },
+          {
+            "type": "code",
+            "text": "isInNode(node: Node) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Mutating Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "moveBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveBackward(n: Number) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveForward"
+          },
+          {
+            "type": "code",
+            "text": "moveForward(n: Number) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveTo"
+          },
+          {
+            "type": "code",
+            "text": "moveTo(path: List, offset: Number) => Point moveTo(key: String, offset: Number) => Point moveTo(offset: Number) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveToEndOfNode(node: Node) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveToStartOfNode(node: Node) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "normalize"
+          },
+          {
+            "type": "code",
+            "text": "normalize(node: Node) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setKey"
+          },
+          {
+            "type": "code",
+            "text": "setKey(key: String|Null) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setOffset"
+          },
+          {
+            "type": "code",
+            "text": "setOffset(offset: Number|Null) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setPath"
+          },
+          {
+            "type": "code",
+            "text": "setPath(path: List|Array|Null) => Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "unset"
+          },
+          {
+            "type": "code",
+            "text": "unset() => Point"
+          }
+        ]
+      ]
+    }
+  ]

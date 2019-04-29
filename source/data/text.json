@@ -1,0 +1,113 @@
+[
+    {
+      "type": "h3",
+      "id": "text",
+      "text": "Text"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "key"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Computed Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "text"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Text.create"
+          },
+          {
+            "type": "code",
+            "text": "Text.create(properties: Object) => Text"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Text.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Text.fromJSON(object: Object) => Text"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Text.isText"
+          },
+          {
+            "type": "code",
+            "text": "Text.isText(maybeText: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    }
+  ]

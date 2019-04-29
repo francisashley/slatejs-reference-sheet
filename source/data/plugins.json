@@ -1,0 +1,115 @@
+[
+    {
+      "type": "h3",
+      "id": "plugins",
+      "text": "Plugins"
+    },
+    {
+      "type": "h4",
+      "text": "Hooks"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "normalizeNode"
+          },
+          {
+            "type": "code",
+            "text": "Function normalizeNode(node: Node, editor: Editor, next: Function) => Function(editor: Editor)|Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "onChange"
+          },
+          {
+            "type": "code",
+            "text": "onChange(editor: Editor, next: Function) => Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "onCommand"
+          },
+          {
+            "type": "code",
+            "text": "onCommand(command: Object, editor: Editor, next: Function) => Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "onConstruct"
+          },
+          {
+            "type": "code",
+            "text": "onConstruct(editor: Editor, next: Function) => Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "onQuery"
+          },
+          {
+            "type": "code",
+            "text": "onQuery(query: Object, editor: Editor, next: Function) => Void"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "validateNode"
+          },
+          {
+            "type": "code",
+            "text": "Function validateNode(node: Node, editor: Editor, next: Function) => SlateError|Void"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Shorthands"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "commands"
+          },
+          {
+            "type": "code",
+            "text": "commands: Object"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "queries"
+          },
+          {
+            "type": "code",
+            "text": "queries: Object"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "schema"
+          },
+          {
+            "type": "code",
+            "text": "schema: Object"
+          }
+        ]
+      ]
+    }
+  ]

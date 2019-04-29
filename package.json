@@ -1,0 +1,20 @@
+{
+  "name": "slatejs-reference-sheet",
+  "version": "1.0.0",
+  "description": "https://prjctnxt.github.io/slatejs-reference-sheet/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "php build source/index.php index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prjctnxt/slatejs-reference-sheet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prjctnxt/slatejs-reference-sheet/issues"
+  },
+  "homepage": "https://github.com/prjctnxt/slatejs-reference-sheet#readme"
+}

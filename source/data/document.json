@@ -1,0 +1,138 @@
+[
+    {
+      "type": "h3",
+      "id": "dopcument",
+      "text": "Document"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "data"
+          },
+          {
+            "type": "code",
+            "text": "Immutable.Map"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "nodes"
+          },
+          {
+            "type": "code",
+            "text": "Immutable.List"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Computed Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "text"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Document.create"
+          },
+          {
+            "type": "code",
+            "text": "Document.create(properties: Object) => Document"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Document.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Document.fromJSON(object: Object) => Document"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Document.isDocument"
+          },
+          {
+            "type": "code",
+            "text": "Document.isDocument(maybeDocument: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Implements interfaces"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Node"
+          }
+        ]
+      ]
+    }
+  ]

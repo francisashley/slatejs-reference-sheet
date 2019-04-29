@@ -1,0 +1,162 @@
+[
+    {
+      "type": "h3",
+      "id": "selection",
+      "text": "Selection"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "isFocused"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "marks"
+          },
+          {
+            "type": "code",
+            "text": "Set"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Computed Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "isBlurred"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Selection.create"
+          },
+          {
+            "type": "code",
+            "text": "Selection.create(properties: Object) => Selection"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Selection.createProperties"
+          },
+          {
+            "type": "code",
+            "text": "Selection.createProperties(object: Object|Selection) => Object"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Selection.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Selection.fromJSON(object: Object) => Selection"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Selection.isSelection"
+          },
+          {
+            "type": "code",
+            "text": "Selection.isSelection(value: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Mutating Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "setIsFocused"
+          },
+          {
+            "type": "code",
+            "text": "setIsFocused(isFocused: Boolean) => Selection"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setMarks"
+          },
+          {
+            "type": "code",
+            "text": "setMarks(marks: Set|Null) => Selection"
+          }
+        ]
+      ]
+    }
+  ]

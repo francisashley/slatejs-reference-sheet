@@ -1,0 +1,1951 @@
+[
+    {
+      "type": "h3",
+      "id": "commands",
+      "text": "Commands"
+    },
+    {
+      "type": "h4",
+      "text": "Current Selection Commands"
+    },
+    {
+      "type": "p",
+      "text": "These commands act on the <code>document</code> based on the current <code>selection</code>. They are equivalent to calling the <a href='https://docs.slatejs.org/slate-core/commands#document-range-commands'>Document Range Commands</a> with the current selection as the <code>range</code> argument, but they are there for convenience, since you often want to act with the current selection, as a user would."
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#addmark",
+            "text": "addMark"
+          },
+          {
+            "type": "code",
+            "text": "addMark(mark: Mark) => Editor\naddMark(properties: Object) => Editor\naddMark(type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#delete",
+            "text": "delete"
+          },
+          {
+            "type": "code",
+            "text": "delete() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertblock",
+            "text": "insertBlock"
+          },
+          {
+            "type": "code",
+            "text": "insertBlock(block: Block) => Editor\ninsertBlock(properties: Object) => Editor\ninsertBlock(type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#deletebackward",
+            "text": "deleteBackward"
+          },
+          {
+            "type": "code",
+            "text": "deleteBackward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#deleteforward",
+            "text": "deleteForward"
+          },
+          {
+            "type": "code",
+            "text": "deleteForward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertfragment",
+            "text": "insertFragment"
+          },
+          {
+            "type": "code",
+            "text": "insertFragment(fragment: Document) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertinline",
+            "text": "insertInline"
+          },
+          {
+            "type": "code",
+            "text": "insertInline(inline: Inline) => Editor\ninsertInline(properties: Object) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertext",
+            "text": "insertText"
+          },
+          {
+            "type": "code",
+            "text": "insertText(text: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setblocks",
+            "text": "setBlocks"
+          },
+          {
+            "type": "code",
+            "text": "setBlocks(properties: Object) => Editor\nsetBlocks(type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setinlines",
+            "text": "setInlines"
+          },
+          {
+            "type": "code",
+            "text": "setInlines(properties: Object) => Editor\nsetInlines(type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#splitblock",
+            "text": "splitBlock"
+          },
+          {
+            "type": "code",
+            "text": "splitBlock(depth: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#splitinline",
+            "text": "splitInline"
+          },
+          {
+            "type": "code",
+            "text": "splitInline(depth: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removemark",
+            "text": "removeMark"
+          },
+          {
+            "type": "code",
+            "text": "removeMark(mark: Mark) => Editor\nremoveMark(properties: Object) => Editor\nremoveMark(type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#replacemark",
+            "text": "replaceMark"
+          },
+          {
+            "type": "code",
+            "text": "replaceMark(oldMark: Mark, newMark: Mark) => Editor\nreplaceMark(oldProperties: Object, newProperties: Object) => Editor\nreplaceMark(oldType: String, newType: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#togglemark",
+            "text": "toggleMark"
+          },
+          {
+            "type": "code",
+            "text": "toggleMark(mark: Mark) => Editor\ntoggleMark(properties: Object) => Editor\ntoggleMark(type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapblock",
+            "text": "unwrapBlock"
+          },
+          {
+            "type": "code",
+            "text": "unwrapBlock(type: String) => Editor\nunwrapBlock(properties: Object) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapinline",
+            "text": "unwrapInline"
+          },
+          {
+            "type": "code",
+            "text": "unwrapInline(type: String) => Editor\nunwrapInline(properties: Object) => Editor "
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapinline",
+            "text": "wrapInline"
+          },
+          {
+            "type": "code",
+            "text": "wrapInline(type: String) => Editor\nwrapInline(properties: Object) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wraptext",
+            "text": "wrapText"
+          },
+          {
+            "type": "code",
+            "text": "wrapText(prefix: String, [suffix: String]) => Editor"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Current Selection Commands"
+    },
+    {
+      "type": "p",
+      "text": "These commands change the current selection, without touching the document."
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#blur",
+            "text": "blur"
+          },
+          {
+            "type": "code",
+            "text": "blur() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#deselect",
+            "text": "deselect"
+          },
+          {
+            "type": "code",
+            "text": "deselect() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#flip",
+            "text": "flip"
+          },
+          {
+            "type": "code",
+            "text": "flip() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#focus",
+            "text": "focus"
+          },
+          {
+            "type": "code",
+            "text": "focus() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-backword",
+            "text": "moveAnchorBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorBackward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-backword",
+            "text": "moveFocusBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusBackward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-backword",
+            "text": "moveStartBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveStartBackward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-backword",
+            "text": "moveEndBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveEndBackward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-forward",
+            "text": "moveAnchorForward"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorForward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-forward",
+            "text": "moveFocusForward"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusForward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-forward",
+            "text": "moveStartForward"
+          },
+          {
+            "type": "code",
+            "text": "moveStartForward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-forward",
+            "text": "moveEndForward"
+          },
+          {
+            "type": "code",
+            "text": "moveEndForward(n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to",
+            "text": "moveAnchorTo"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorTo(path: List, offset: Number) => Editor\nmoveAnchorTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor\n"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to",
+            "text": "moveFocusTo"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorTo(path: List, offset: Number) => Editor\nmoveFocusTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor\n"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to",
+            "text": "moveStartTo"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorTo(path: List, offset: Number) => Editor\nmoveStartTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor\n"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to",
+            "text": "moveEndTo"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorTo(path: List, offset: Number) => Editor\nmoveEndTo(key: String, offset: Number) => Editor moveTo(offset: Number) => Editor\n"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#moveto-point",
+            "text": "moveToAnchor"
+          },
+          {
+            "type": "code",
+            "text": "moveToAnchor() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#moveto-point",
+            "text": "moveToFocus"
+          },
+          {
+            "type": "code",
+            "text": "moveToFocus() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#moveto-point",
+            "text": "moveToStart"
+          },
+          {
+            "type": "code",
+            "text": "moveToStart() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#moveto-point",
+            "text": "moveToEnd"
+          },
+          {
+            "type": "code",
+            "text": "moveToEnd() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveAnchorToStartOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveFocusToStartOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveStartToStartOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveEndToStartOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveAnchorToEndOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveFocusToEndOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveStartToEndOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofblock",
+            "text": "moveEndToEndOfBlock"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOfBlock() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveAnchorToStartOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveFocusToStartOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveStartToStartOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveEndToStartOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveAnchorToEndOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveFocusToEndOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveStartToEndOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofdocument",
+            "text": "moveEndToEndOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveAnchorToStartOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveFocusToStartOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveStartToStartOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveEndToStartOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveAnchorToEndOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveFocusToEndOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveStartToEndOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofinline",
+            "text": "moveEndToEndOfInline"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOfInline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveAnchorToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveFocusToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveStartToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveEndToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveAnchorToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveFocusToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveStartToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-ofnode",
+            "text": "moveEndToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveAnchorToStartOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveFocusToStartOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveStartToStartOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveEndToStartOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveAnchorToEndOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveFocusToEndOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveStartToEndOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-oftext",
+            "text": "moveEndToEndOfText"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOfText(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveAnchorToStartOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveFocusToStartOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveStartToStartOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveEndToStartOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveAnchorToEndOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveFocusToEndOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveStartToEndOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-block",
+            "text": "moveEndToEndOf{Direction???}Block"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOf{Direction???}Block() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveAnchorToStartOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveFocusToStartOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveStartToStartOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveEndToStartOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveAnchorToEndOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveFocusToEndOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveStartToEndOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-inline",
+            "text": "moveEndToEndOf{Direction???}Inline"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOf{Direction???}Inline() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveAnchorToStartOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveFocusToStartOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveStartToStartOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveEndToStartOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveAnchorToEndOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveFocusToEndOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveStartToEndOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#move-point-to-edge-of-direction-text",
+            "text": "moveEndToEndOf{Direction???}Text"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOf{Direction???}Text() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#movetorangeofnode",
+            "text": "moveToRangeOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveToRangeOfNode(node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#movetorangeofdocument",
+            "text": "moveToRangeOfDocument"
+          },
+          {
+            "type": "code",
+            "text": "moveToRangeOfDocument() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#select",
+            "text": "select"
+          },
+          {
+            "type": "code",
+            "text": "select(properties: Range || Object) => Editor"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Document Range Commands"
+    },
+    {
+      "type": "p",
+      "text": "These commands act on a specific Range of the document."
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#addmarkatrange",
+            "text": "addMarkAtRange"
+          },
+          {
+            "type": "code",
+            "text": "addMarkAtRange(range: Range, mark: Mark) => Editor\naddMarkAtRange(range: Range, properties: Object) => Editor\naddMarkAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#deleteatrange",
+            "text": "deleteAtRange"
+          },
+          {
+            "type": "code",
+            "text": "deleteAtRange(range: Range, ) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#deletebackwardatrange",
+            "text": "deleteBackwardAtRange"
+          },
+          {
+            "type": "code",
+            "text": "deleteBackwardAtRange(range: Range, n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#deleteforwardatrange",
+            "text": "deleteForwardAtRange"
+          },
+          {
+            "type": "code",
+            "text": "deleteForwardAtRange(range: Range, n: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertblockatrange",
+            "text": "insertBlockAtRange"
+          },
+          {
+            "type": "code",
+            "text": "insertBlockAtRange(range: Range, block: Block) => Editor\ninsertBlockAtRange(range: Range, properties: Object) => Editor\ninsertBlockAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertfragmentatrange",
+            "text": "insertFragmentAtRange"
+          },
+          {
+            "type": "code",
+            "text": "insertFragmentAtRange(range: Range, fragment: Document) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertinlineatrange",
+            "text": "insertInlineAtRange"
+          },
+          {
+            "type": "code",
+            "text": "insertInlineAtRange(range: Range, inline: Inline) => Editor\ninsertInlineAtRange(range: Range, properties: Object) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#inserttextatrange",
+            "text": "insertTextAtRange"
+          },
+          {
+            "type": "code",
+            "text": "insertTextAtRange(range: Range, text: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setblocksatrange",
+            "text": "setBlocksAtRange"
+          },
+          {
+            "type": "code",
+            "text": "setBlocksAtRange(range: Range, properties: Object) => Editor\nsetBlocks(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setinlinesatrange",
+            "text": "setInlinesAtRange"
+          },
+          {
+            "type": "code",
+            "text": "setInlinesAtRange(range: Range, properties: Object) => Editor\nsetInlines(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#splitblockatrange",
+            "text": "splitBlockAtRange"
+          },
+          {
+            "type": "code",
+            "text": "splitBlockAtRange(range: Range, depth: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#splitinlineatrange",
+            "text": "splitInlineAtRange"
+          },
+          {
+            "type": "code",
+            "text": "splitInlineAtRange(range: Range, depth: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removemarkatrange",
+            "text": "removeMarkAtRange"
+          },
+          {
+            "type": "code",
+            "text": "removeMarkAtRange(range: Range, mark: Mark) => Editor\nremoveMarkAtRange(range: Range, properties: Object) => Editor\nremoveMarkAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#togglemarkatrange",
+            "text": "toggleMarkAtRange"
+          },
+          {
+            "type": "code",
+            "text": "toggleMarkAtRange(range: Range, mark: Mark) => Editor\ntoggleMarkAtRange(range: Range, properties: Object) => Editor\ntoggleMarkAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapblockatrange",
+            "text": "unwrapBlockAtRange"
+          },
+          {
+            "type": "code",
+            "text": "unwrapBlockAtRange(range: Range, properties: Object) => Editor\nunwrapBlockAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapinlineatrange",
+            "text": "unwrapInlineAtRange"
+          },
+          {
+            "type": "code",
+            "text": "unwrapInlineAtRange(range: Range, properties: Object) => Editor\nunwrapInlineAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapblockatrange",
+            "text": "wrapBlockAtRange"
+          },
+          {
+            "type": "code",
+            "text": "wrapBlockAtRange(range: Range, properties: Object) => Editor\nwrapBlockAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapinlineatrange",
+            "text": "wrapInlineAtRange"
+          },
+          {
+            "type": "code",
+            "text": "wrapInlineAtRange(range: Range, properties: Object) => Editor\nwrapInlineAtRange(range: Range, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wraptextatrange",
+            "text": "wrapTextAtRange"
+          },
+          {
+            "type": "code",
+            "text": "wrapTextAtRange(range: Range, prefix: String, [suffix: String]) => Editor"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Node Commands"
+    },
+    {
+      "type": "p",
+      "text": "These commands are lower-level, and act on a specific node by its key or path. They're often used in your custom components because you'll have access to props.node."
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#addmarkbykey-path",
+            "text": "addMarkByKey"
+          },
+          {
+            "type": "code",
+            "text": "addMarkByKey(key: String, offset: Number, length: Number, mark: Mark) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#addmarkbykey-path",
+            "text": "addMarkByPath"
+          },
+          {
+            "type": "code",
+            "text": "addMarkByPath(path: List, offset: Number, length: Number, mark: Mark) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertnodebykey-path",
+            "text": "insertNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "insertNodeByKey(key: String, index: Number, node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertnodebykey-path",
+            "text": "insertNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "insertNodeByPath(path: List, index: Number, node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertfragmentbykey-path",
+            "text": "insertFragmentByKey"
+          },
+          {
+            "type": "code",
+            "text": "insertFragmentByKey(key: String, index: Number, fragment: Fragment) => Transform"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#insertfragmentbykey-path",
+            "text": "insertFragmentByPath"
+          },
+          {
+            "type": "code",
+            "text": "insertFragmentByPath(path: list, index: Number, fragment: Fragment) => Transform"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#inserttextbykey-path",
+            "text": "insertTextByKey"
+          },
+          {
+            "type": "code",
+            "text": "insertTextByKey(key: String, offset: Number, text: String, [marks: Set]) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#inserttextbykey-path",
+            "text": "insertTextByPath"
+          },
+          {
+            "type": "code",
+            "text": "insertTextByPath(path: List, offset: Number, text: String, [marks: Set]) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#mergenodebykey-path",
+            "text": "mergeNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "mergeNodeByKey(key: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#mergenodebykey-path",
+            "text": "mergeNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "mergeNodeByPath(path: List) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#movenodebykey-path",
+            "text": "moveNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "moveNodeByKey(key: String, newKey: String, newIndex: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#movenodebykey-path",
+            "text": "moveNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "moveNodeByPath(path: List, newKey: String, newIndex: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removemarkbykey-path",
+            "text": "removeMarkByKey"
+          },
+          {
+            "type": "code",
+            "text": "removeMarkByKey(key: String, offset: Number, length: Number, mark: Mark) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removemarkbykey-path",
+            "text": "removeMarkByPath"
+          },
+          {
+            "type": "code",
+            "text": "removeMarkByPath(path: List, offset: Number, length: Number, mark: Mark) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removenodebykey-path",
+            "text": "removeNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "removeNodeByKey(key: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removenodebykey-path",
+            "text": "removeNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "removeNodeByPath(path: List) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#replacenodebykey-path",
+            "text": "replaceNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "replaceNodeByKey(key: String, node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#replacenodebykey-path",
+            "text": "replaceNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "replaceNodeByPath(path: List, node: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removetextbykey-path",
+            "text": "removeTextByKey"
+          },
+          {
+            "type": "code",
+            "text": "removeTextByKey(key: String, offset: Number, length: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#removetextbykey-path",
+            "text": "removeTextByPath"
+          },
+          {
+            "type": "code",
+            "text": "removeTextByPath(path: List, offset: Number, length: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setmarkbykey-path",
+            "text": "setMarkByKey"
+          },
+          {
+            "type": "code",
+            "text": "setMarkByKey(key: String, offset: Number, length: Number, properties: Object, newProperties: Object) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setmarkbykey-path",
+            "text": "setMarkByPath"
+          },
+          {
+            "type": "code",
+            "text": "setMarkByPath(path: List, offset: Number, length: Number, properties: Object, newProperties: Object) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setnodebykey-path",
+            "text": "setNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "setNodeByKey(key: String, properties: Object) => Editor\nsetNodeByKey(key: String, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#setnodebykey-path",
+            "text": "setNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "setNodeByPath(path: List, properties: Object) => Editor\nsetNodeByPath(path: List, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#splitnodebykey-path",
+            "text": "splitNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "splitNodeByKey(key: String, offset: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#splitnodebykey-path",
+            "text": "splitNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "splitNodeByPath(path: List, offset: Number) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapinlinebykey-path",
+            "text": "unwrapInlineByKey"
+          },
+          {
+            "type": "code",
+            "text": "unwrapInlineByKey(key: String, properties: Object) => Editor\nunwrapInlineByKey(key: String, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapinlinebykey-path",
+            "text": "unwrapInlineByPath"
+          },
+          {
+            "type": "code",
+            "text": "unwrapInlineByPath(path: List, properties: Object) => Editor\nunwrapInlineByPath(path: List, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapblockbykey-path",
+            "text": "unwrapBlockByKey"
+          },
+          {
+            "type": "code",
+            "text": "unwrapBlockByKey(key: String, properties: Object) => Editor\nunwrapBlockByKey(key: String, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapblockbykey-path",
+            "text": "unwrapBlockByPath"
+          },
+          {
+            "type": "code",
+            "text": "unwrapBlockByPath(path: List, properties: Object) => Editor\nunwrapBlockByPath(path: List, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapnodebykey-path",
+            "text": "unwrapNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "unwrapNodeByKey(key: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#unwrapnodebykey-path",
+            "text": "unwrapNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "unwrapNodeByPath(path: List) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapblockbykey-path",
+            "text": "wrapBlockByKey"
+          },
+          {
+            "type": "code",
+            "text": "wrapBlockByKey(key: String, properties: Object) => Editor\nwrapBlockByKey(key: String, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapblockbykey-path",
+            "text": "wrapBlockByPath"
+          },
+          {
+            "type": "code",
+            "text": "wrapBlockByPath(path: List, properties: Object) => Editor\nwrapBlockByPath(path: List, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapinlinebykey-path",
+            "text": "wrapInlineByKey"
+          },
+          {
+            "type": "code",
+            "text": "wrapInlineByKey(key: String, properties: Object) => Editor\nwrapInlineByKey(key: String, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapinlinebykey-path",
+            "text": "wrapInlineByPath"
+          },
+          {
+            "type": "code",
+            "text": "wrapInlineByPath(path: List, properties: Object) => Editor\nwrapInlineByPath(path: List, type: String) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapnodebykey-path",
+            "text": "wrapNodeByKey"
+          },
+          {
+            "type": "code",
+            "text": "wraNodeByKey(key: String, parent: Node) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#wrapnodebykey-path",
+            "text": "wrapNodeByPath"
+          },
+          {
+            "type": "code",
+            "text": "wraNodeByPath(path: List, parent: Node) => Editor"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "History Commands"
+    },
+    {
+      "type": "p",
+      "text": "These commands use the history to undo/redo previously made changes."
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#redo",
+            "text": "redo"
+          },
+          {
+            "type": "code",
+            "text": "redo() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#undo",
+            "text": "undo"
+          },
+          {
+            "type": "code",
+            "text": "undo() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#snapshotselection",
+            "text": "snapshotSelection"
+          },
+          {
+            "type": "code",
+            "text": "snapshotSelection() => Editor"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Miscellaneous Commands"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#normalize",
+            "text": "normalize"
+          },
+          {
+            "type": "code",
+            "text": "normalize() => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#withoutnormalizing",
+            "text": "withoutNormalizing"
+          },
+          {
+            "type": "code",
+            "text": "withoutNormalizing(fn: Function) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#withoutsaving",
+            "text": "withoutSaving"
+          },
+          {
+            "type": "code",
+            "text": "withoutSaving(fn: Function) => Editor"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "link": "https://docs.slatejs.org/slate-core/commands#withoutmerging",
+            "text": "withoutMerging"
+          },
+          {
+            "type": "code",
+            "text": "withoutMerging(fn: Function) => Editor"
+          }
+        ]
+      ]
+    }
+  ]

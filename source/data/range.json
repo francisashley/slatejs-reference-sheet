@@ -1,0 +1,532 @@
+[
+    {
+      "type": "h3",
+      "id": "range",
+      "text": "Range"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "anchor"
+          },
+          {
+            "type": "code",
+            "text": "Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "focus"
+          },
+          {
+            "type": "code",
+            "text": "Point"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Computed Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "end"
+          },
+          {
+            "type": "code",
+            "text": "Anchor|Focus"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isBackward"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isCollapsed"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isExpanded"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isForward"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isSet"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "isUnset"
+          },
+          {
+            "type": "code",
+            "text": "Boolean"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "start"
+          },
+          {
+            "type": "code",
+            "text": "Acnhor|Focus"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Range.create"
+          },
+          {
+            "type": "code",
+            "text": "Range.create(properties: Object) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Range.createProperties"
+          },
+          {
+            "type": "code",
+            "text": "Range.createProperties(object: Object|Range) => Object"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Range.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Range.fromJSON(object: Object) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Range.isRange"
+          },
+          {
+            "type": "code",
+            "text": "Range.isRange(value: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Mutating Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "moveAnchorBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveFocusBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveStartBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveStartBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveEndBackward"
+          },
+          {
+            "type": "code",
+            "text": "moveEndBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveAnchorForward"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveFocusForward"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveStartForward"
+          },
+          {
+            "type": "code",
+            "text": "moveStartBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveEndForward"
+          },
+          {
+            "type": "code",
+            "text": "moveEndBackward(n: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveAnchorTo"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorTo(path: List, offset: Number) => Range\nmoveAnchorTo(key: String, offset: Number) => Range\nmoveAnchorTo(offset: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveFocusTo"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusTo(path: List, offset: Number) => Range\nmoveFocusTo(key: String, offset: Number) => Range\nmoveFocusTo(offset: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveStartTo"
+          },
+          {
+            "type": "code",
+            "text": "moveStartTo(path: List, offset: Number) => Range\nmoveStartTo(key: String, offset: Number) => Range\nmoveStartTo(offset: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveEndTo"
+          },
+          {
+            "type": "code",
+            "text": "moveEndTo(path: List, offset: Number) => Range\nmoveEndTo(key: String, offset: Number) => Range\nmoveEndTo(offset: Number) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveAnchorToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToEndOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveFocusToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToEndOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveStartToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToEndOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveEndToEndOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToEndOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveAnchorToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveAnchorToStartOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveFocusToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveFocusToStartOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveStartToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveStartToStartOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveEndToStartOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveEndToStartOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveToAnchor"
+          },
+          {
+            "type": "code",
+            "text": "moveToAnchor() => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveToFocus"
+          },
+          {
+            "type": "code",
+            "text": "moveToFocus() => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveToStart"
+          },
+          {
+            "type": "code",
+            "text": "moveToStart() => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveToEnd"
+          },
+          {
+            "type": "code",
+            "text": "moveToEnd() => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "moveToRangeOfNode"
+          },
+          {
+            "type": "code",
+            "text": "moveToRangeOfNode(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "normalize"
+          },
+          {
+            "type": "code",
+            "text": "normalize(node: Node) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setAnchor"
+          },
+          {
+            "type": "code",
+            "text": "setAnchor(anchor: Point) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setEnd"
+          },
+          {
+            "type": "code",
+            "text": "setEnd(end: Point) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setFocus"
+          },
+          {
+            "type": "code",
+            "text": "setFocus(focus: Point) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setProperties"
+          },
+          {
+            "type": "code",
+            "text": "setProperties(properties: Object|Range) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "setStart"
+          },
+          {
+            "type": "code",
+            "text": "setStart(start: Point) => Range"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "unset"
+          },
+          {
+            "type": "code",
+            "text": "unset() => Range"
+          }
+        ]
+      ]
+    }
+  ]

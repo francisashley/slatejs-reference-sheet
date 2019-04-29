@@ -1,0 +1,123 @@
+[
+    {
+      "type": "h3",
+      "id": "decoration",
+      "text": "Decoration"
+    },
+    {
+      "type": "h4",
+      "text": "Properties"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "mark"
+          },
+          {
+            "type": "code",
+            "text": "Mark"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "object"
+          },
+          {
+            "type": "code",
+            "text": "String"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Static Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "Decoration.create"
+          },
+          {
+            "type": "code",
+            "text": "Decoration.create(properties: Object) => Decoration"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Decoration.createProperties"
+          },
+          {
+            "type": "code",
+            "text": "Decoration.createProperties(object: Object|Decoration) => Object"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Decoration.fromJSON"
+          },
+          {
+            "type": "code",
+            "text": "Decoration.fromJSON(object: Object) => Decoration"
+          }
+        ],
+        [
+          {
+            "type": "a",
+            "text": "Decoration.isDecoration"
+          },
+          {
+            "type": "code",
+            "text": "Decoration.isDecoration(value: Any) => Boolean"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Instance Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "toJSON"
+          },
+          {
+            "type": "code",
+            "text": "toJSON() => Object"
+          }
+        ]
+      ]
+    },
+    {
+      "type": "h4",
+      "text": "Mutating Methods"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          {
+            "type": "a",
+            "text": "setMark"
+          },
+          {
+            "type": "code",
+            "text": "setMark(mark: Mark) => Decoration"
+          }
+        ]
+      ]
+    }
+  ]

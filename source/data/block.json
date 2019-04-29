@@ -1,0 +1,135 @@
+[
+  {
+    "type": "h3",
+    "id": "block",
+    "text": "Block"
+  },
+  {
+    "type": "h4",
+    "text": "Properties"
+  },
+  {
+    "type": "table",
+    "rows": [
+      [
+        {
+          "type": "a",
+          "text": "block.data",
+          "link": "https://docs.slatejs.org/slate-core/block#data"
+        },
+        { "type": "code", "text": "Immutable.Map" }
+      ],
+      [
+        {
+          "type": "a",
+          "text": "block.key",
+          "link": "https://docs.slatejs.org/slate-core/block#key"
+        },
+        { "type": "code", "text": "String" }
+      ],
+      [
+        {
+          "type": "a",
+          "text": "block.object",
+          "link": "https://docs.slatejs.org/slate-core/block#object"
+        },
+        { "type": "code", "text": "String" }
+      ],
+      [
+        {
+          "type": "a",
+          "text": "block.nodes",
+          "link": "https://docs.slatejs.org/slate-core/block#nodes"
+        },
+        { "type": "code", "text": "Immutable.List" }
+      ],
+      [
+        {
+          "type": "a",
+          "text": "block.type",
+          "link": "https://docs.slatejs.org/slate-core/block#type"
+        },
+        { "type": "code", "text": "String" }
+      ]
+    ]
+  },
+  {
+    "type": "h4",
+    "text": "Computed Properties"
+  },
+  {
+    "type": "table",
+    "rows": [
+      [
+        {
+          "type": "a",
+          "text": "block.text",
+          "link": "https://docs.slatejs.org/slate-core/block#text"
+        },
+        { "type": "code", "text": "String" }
+      ]
+    ]
+  },
+  {
+    "type": "h4",
+    "text": "Static Methods"
+  },
+  {
+    "type": "table",
+    "rows": [
+      [
+        {
+          "type": "a",
+          "text": "block.create",
+          "link": "https://docs.slatejs.org/slate-core/block#block-create"
+        },
+        { "type": "code", "text": "Block.create(properties: Object) => Block" }
+      ],
+      [
+        {
+          "type": "a",
+          "text": "block.createList",
+          "link": "https://docs.slatejs.org/slate-core/block#block-createlist"
+        },
+        { "type": "code", "text": "Block.createList(array: Array) => List" }
+      ],
+      [
+        {
+          "type": "a",
+          "text": "block.fromJSON",
+          "link": "https://docs.slatejs.org/slate-core/block#block-fromjson"
+        },
+        { "type": "code", "text": "Block.fromJSON(object: Object) => Block" }
+      ],
+      [
+        {
+          "type": "a",
+          "text": "block.isBlock",
+          "link": "https://docs.slatejs.org/slate-core/block#block-isblock"
+        },
+        { "type": "code", "text": "Block.isBlock(maybeBlock: Any) => Boolean" }
+      ]
+    ]
+  },
+  {
+    "type": "h4",
+    "text": "Instance Methods"
+  },
+  {
+    "type": "table",
+    "rows": [
+      [
+        { "type": "a", "text": "toJSON", "link": "https://docs.slatejs.org/slate-core/block#tojson" },
+        { "type": "code", "text": "toJSON() => Object" }
+      ]
+    ]
+  },
+  {
+    "type": "h4",
+    "text": "Implements interfaces"
+  },
+  {
+    "type": "table",
+    "rows": [[{ "type": "code", "text": "Node" }]]
+  }
+]
