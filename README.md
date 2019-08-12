@@ -1,3 +1,3 @@
 # slatejs-reference-sheet
 
-https://prjctnxt.github.io/slatejs-reference-sheet/
+https://fa-repo.github.io/slatejs-reference-sheet/
